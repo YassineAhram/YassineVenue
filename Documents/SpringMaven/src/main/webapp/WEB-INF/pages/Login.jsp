@@ -12,7 +12,7 @@
      <form action="Welcome.jsp" method="post">
         
         <p>
-			Email <input type="email" name="email address" placeholder="example@gmail.com" autofocus required /><br />
+			Email <input type="email" name="email" placeholder="example@gmail.com" autofocus required /><br />
 		</p>
 		
 		<p>
