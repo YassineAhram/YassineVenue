@@ -8,13 +8,16 @@ public class User implements Serializable {
 	private String lastName;
 	private String email;
 	private String password;
-	private Integer mobile;
+	private String mobile;
 	private String address;
 	private String pc;
-	private String country;
+	
+	public User(){
+		super();
+	}
+	
 	public User(String firstName, String lastName, String email,
-			String password, Integer mobile, String address, String pc,
-			String country) {
+			String password, String mobile, String address, String pc) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -23,7 +26,7 @@ public class User implements Serializable {
 		this.mobile = mobile;
 		this.address = address;
 		this.pc = pc;
-		this.country = country;
+		
 	}
 	public String getFirstName() {
 		return firstName;
@@ -49,10 +52,10 @@ public class User implements Serializable {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public Integer getMobile() {
+	public String getMobile() {
 		return mobile;
 	}
-	public void setMobile(Integer mobile) {
+	public void setMobile(String mobile) {
 		this.mobile = mobile;
 	}
 	public String getAddress() {
@@ -67,18 +70,12 @@ public class User implements Serializable {
 	public void setPc(String pc) {
 		this.pc = pc;
 	}
-	public String getCountry() {
-		return country;
-	}
-	public void setCountry(String country) {
-		this.country = country;
-	}
+	
 	@Override
 	public String toString() {
 		return "User [firstName=" + firstName + ", lastName=" + lastName
 				+ ", email=" + email + ", password=" + password + ", mobile="
-				+ mobile + ", address=" + address + ", pc=" + pc + ", country="
-				+ country + "]";
+				+ mobile + ", address=" + address + ", pc=" + pc + "]";
 	}
 	
 	

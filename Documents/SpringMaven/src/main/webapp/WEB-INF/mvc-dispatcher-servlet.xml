@@ -14,7 +14,7 @@
         
         <context:component-scan base-package="com.yahram.controller"></context:component-scan>
         <mvc:annotation-driven/>
-        
+        <!-- view -->
         <bean  class="org.springframework.web.servlet.view.InternalResourceViewResolver"> 
         <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"></property> 
         <property name="prefix">  
@@ -25,8 +25,24 @@
         </property>  
     </bean> 
     
+    <!-- time -->
     <bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver">
       <property name="defaultLocale" value="UK"></property> 
       </bean>
+      
+      <!-- JDBCTemplate -->
+      <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/spring"/>
+        <property name="username" value="root"/>
+        <property name="password" value="yasinml320"/>
+     </bean>
+     
+     <bean id="UserJDBCTemplate" class="com.yahram.dao.UserJDBCTemplate">
+        <property name="dataSource"  ref="dataSource" />  
+     </bean>
+   
+   
+     
    
 </beans> 
