@@ -27,7 +27,7 @@ public class UserJDBCTemplate extends JdbcDaoSupport implements UserDao  {
 		@SuppressWarnings("unchecked")
 		public boolean isAcountExists(String email, String password) {
 	        String sql = "SELECT * FROM user WHERE email='"+email+"' AND password='"+password+"'";
-	        boolean a = (boolean)getJdbcTemplate().queryForObject(sql, new Object[] {"email", "password"}, new UserMapper());
+	        boolean a = (boolean)jdbcTemplateObject.queryForObject(sql, new Object[] {"email", "password"}, new UserMapper());
 	        		//jdbcTemplateObject.queryForObject(sql, new UserMapper());
 	        
 	        
@@ -36,7 +36,7 @@ public class UserJDBCTemplate extends JdbcDaoSupport implements UserDao  {
 		
 		public String getNameByEmail(String email) {
 			String sql = "SELECT * FROM user WHERE email='"+email+"'";
-			String name = getJdbcTemplate().queryForObject(sql, new Object [] {"email"}, String.class);
+			String name = jdbcTemplateObject.queryForObject(sql, new Object [] {"email"}, String.class);
 			return name;
 			
 		}
@@ -45,7 +45,7 @@ public class UserJDBCTemplate extends JdbcDaoSupport implements UserDao  {
 	    @SuppressWarnings("unchecked")
 		public boolean isEmailRegistered(String email){
 	        String sql = "SELECT * FROM usuarios WHERE email='"+email+"'";
-	        boolean b = (boolean)getJdbcTemplate().queryForObject(sql, new Object[] {"email"}, new UserMapper());
+	        boolean b = (boolean)jdbcTemplateObject.queryForObject(sql, new Object[] {"email"}, new UserMapper());
 	 
 	        return b;
 	    }
