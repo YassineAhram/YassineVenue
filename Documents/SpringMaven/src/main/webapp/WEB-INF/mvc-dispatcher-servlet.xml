@@ -42,9 +42,6 @@
         <property name="dataSource"  ref="dataSource" />  
      </bean>
    
-   <bean id="CountriesJDBCTemplate" class="com.yahram.dao.CountriesJDBCTemplate">
-        <property name="dataSource"  ref="dataSource" />  
-   </bean>
    
      
    

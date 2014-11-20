@@ -13,10 +13,8 @@
 <body>
   <h2>Hello to Yassine's Venue</h2>
     <p>
-       ${now}
-     <c:out value="${now}" />
+    Welcome <c:out value="${param.email}" />, it is now <c:out value="${now}" />
     </p>
-    
     
 
 </body>

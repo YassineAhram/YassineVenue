@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -8,7 +7,7 @@
 <title>Register</title>
 </head>
 <body>
-  <h1>Register ${now}</h1>
+  <h1>Register</h1>
     <h6>
       <p>
     Register for an account with Yassine's Venue. It only takes a minute and gives you a range of benefits such as quick online reservations. we’ll make sure you’re the first to hear all our latest news and offers.
@@ -18,7 +17,7 @@
     What’s more, as a little thank you for signing up, you’ll get a 241 cocktail voucher. Keep an eye on your inbox – it’ll be winging its way to you soon.
      </p><br/>
   </h6>
-  <form:form action="Welcome.jsp" method="post" commandName="countries" >
+  <form action="Welcome.jsp" method="post">
   
   
 		<p>
@@ -60,11 +59,11 @@
 		</p>
 		
 		<p>
-         Select Countries
-        <form:select path="country">
-            <form:option value="-" label="--Please Select"/>
-            <form:options items="${countryList}" itemValue="code" itemLabel="name"/>
-        </form:select>
+         Select Country
+                <select size="3" name="country" id="country" required >
+                    <option selected="selected" value="negro">negro
+                    <option value="blanco"/>
+                </select>
          </p><br>
 
 		<p>
@@ -74,7 +73,7 @@
 		</p>
 
   
-  </form:form>
+  </form>
 
 
 </body>

@@ -17,35 +17,22 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.yahram.dao.UserDao;
-import com.yahram.dao.UserJDBCTemplate;
-
 @Controller
 public class UserController {
 	
-	//protected final Log logger = LogFactory.getLog(getClass());
+	protected final Log logger = LogFactory.getLog(getClass());
 
     @RequestMapping(value="/Welcome.htm")
-    public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response)
+    public ModelAndView form(HttpServletRequest request, HttpServletResponse response, User user)
             throws ServletException, IOException {
-        String userEmail = request.getParameter("email");
-        UserJDBCTemplate d = new UserJDBCTemplate();
+  
+        String now = (new Date()).toString();
+        logger.info("Returning Welcome view with " + now);
         
-        if(d.isEmailRegistered(userEmail)){
-        	String date = (new Date()).toString();
-        	String now = "Welcome "+userEmail+ "now is"+date;
-        	return new ModelAndView("Welcome", "now", now);
-        	
-        }
-        
-        else{
-        	return new ModelAndView("Register", "now", "Sorry, Email no exist");
-        }
-       
-       
-        
+        Map<String, Object> myModel = new HashMap<String, Object>();
+        myModel.put("now", now);
 
-        
+        return new ModelAndView("Welcome", "now", now);
 
     }
 
